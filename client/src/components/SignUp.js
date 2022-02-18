@@ -17,7 +17,7 @@ import Particles from './ParticlesContainer'
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
+
       <Link color="inherit" href="https://mui.com/">
         Your Website
       </Link>{' '}
@@ -49,7 +49,7 @@ export default function SignUp() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 4,
+            marginTop: 6,
             marginBottom: 4,
             display: 'flex',
             flexDirection: 'column',
@@ -131,7 +131,7 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
