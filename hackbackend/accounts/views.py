@@ -1,6 +1,6 @@
 from rest_framework.generics import GenericAPIView
 from rest_framework.authtoken.models import Token
-from .serializers import RegisterSerializer,LoginSerializer
+from .serializers import UserRegisterSerializer,LoginSerializer, NgoRegisterSerializer
 from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse
 from .utils import Util
@@ -12,10 +12,28 @@ from rest_framework import status,permissions
 from .models import User
 
 # Create your views here.
-class RegisterAPI(GenericAPIView):
+class UserRegisterAPI(GenericAPIView):
 	permission_classes = [permissions.AllowAny]
 	
-	serializer_class = RegisterSerializer
+	serializer_class = UserRegisterSerializer
+	
+	def post(self,request,*args,**kwargs):
+		data = request.data
+		serializer = self.serializer_class(data=data)
+		serializer.is_valid(raise_exception = True)
+		user = serializer.save()
+		token = Token.objects.create(user=user)
+		current_site = get_current_site(request).domain
+		relative_link = reverse('email-verify')
+		link = 'http://'+current_site+relative_link+'?token='+ token.key
+		data = {'email_body': f'Use this link to get verified: {link}.', 'subject':'Email Verification', 'to' : user.email}
+		Util.send_email(data)
+		return Response({'Success':'Your account is successfully created,please check your mail for verification.'},status=status.HTTP_201_CREATED)
+
+class NgoRegisterAPI(GenericAPIView):
+	permission_classes = [permissions.AllowAny]
+	
+	serializer_class = NgoRegisterSerializer
 	
 	def post(self,request,*args,**kwargs):
 		data = request.data

@@ -55,3 +55,7 @@ class User(AbstractUser):
     def token(self):
         token = Token.objects.get(user=User.objects.get(self.id))
         return token
+
+class Ngo(User):
+    ngo_type = models.CharField(max_length=200)
+    address = models.CharField(max_length= 200)
