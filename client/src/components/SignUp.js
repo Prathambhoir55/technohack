@@ -148,7 +148,7 @@ export default function SignUp() {
 
         }}
       > */}
-        <Particles sx={{zIndex: -1}} />
+        {/* <Particles sx={{zIndex: -1}} /> */}
       {/* </div> */}
       </>
   )
