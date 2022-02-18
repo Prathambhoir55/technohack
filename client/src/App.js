@@ -1,11 +1,14 @@
 import './App.css'
 import SignUp from './components/SignUp'
-import {BrowserRouter as Router} from 'react-router-dom'
+
+import SignIn from './components/SignIn'
+
+
 function App() {
   return (
     <div className="App">
-    
-      <SignUp />
+      {/* <SignUp /> */}
+      <SignIn /> 
     </div>
   )
 }
