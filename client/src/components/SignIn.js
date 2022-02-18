@@ -45,19 +45,24 @@ export default function SignIn() {
   }
 
   return (
+    <>
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <main>
+        <section class="glass">
+        <Container  sx={{ bgcolor: 'transparent' }} maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 9,
+            marginBottom: 0,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            bgcolor: 'transparent'
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
+           <Avatar sx={{ m: 1, bgcolor: '#5293E5' }}>
+           <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
@@ -114,8 +119,12 @@ export default function SignIn() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+       
       </Container>
-    </ThemeProvider>
+      </section>  
+      </main>
+      </ThemeProvider>
+    </>
+    
   )
 }
