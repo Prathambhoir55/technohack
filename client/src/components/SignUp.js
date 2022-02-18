@@ -8,7 +8,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -43,18 +43,22 @@ export default function SignUp() {
   return (
     <>
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+    <main>
+    <section class="glass">
+      <Container  sx={{ bgcolor: 'transparent' }} maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 4,
+            marginBottom: 4,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            bgcolor: 'transparent'
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            {/* <LockOutlinedIcon /> */}
+          <Avatar sx={{ m: 1, bgcolor: '#5293E5' }}>
+            <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign up
@@ -134,8 +138,12 @@ export default function SignUp() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
+       
       </Container>
+      </section>
+      <div class="circle1"></div>
+    <div class="circle2"></div>
+    </main>
 
       
     </ThemeProvider>
