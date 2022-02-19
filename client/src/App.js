@@ -3,7 +3,7 @@ import SignUp from './components/SignUp'
 import { BrowserRouter as Router} from 'react-router-dom';
 import { Route, Routes } from "react-router";
 import SignIn from './components/SignIn'
-import Landing from './components/Landing'
+import Landing from './components/landing/Landing'
 import Home from './components/Home'
 function App() {
   return (

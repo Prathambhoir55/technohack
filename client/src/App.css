@@ -5,13 +5,17 @@
 .imeg{ 
   /* position: absolute; */
   height: 60%;
+  margin-left: 740px;
   margin-top:100px;
-  
+  /* z-index: -1;   */
+  position: fixed;
 }
+
 .img{
-  background: linear-gradient(252.91deg, rgba(116, 235, 213, 0.52) 0.33%, #ACB6E5 96.31%);;
+  background: linear-gradient(252.91deg, rgba(116, 235, 213, 0.52) 0.33%, #ACB6E5 96.31%);
   height: 100vh;
-  
+  display: flex;
+  position: relative;
   /* margin-top: -230px; */
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,7 +24,7 @@
 main {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  background: linear-gradient(to right top, #67eed5, #508de7);
+  background: linear-gradient(252.91deg, rgba(116, 235, 213, 0.52) 0.33%, #ACB6E5 96.31%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,3 +102,12 @@ main {
     transform: rotate(360deg);
   }
 }
+
+#ngo{ 
+  text-decoration: none;
+
+}
+ngo :visited {
+  color: #3abc45;
+
+ }
