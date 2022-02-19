@@ -29,6 +29,10 @@ class UserRegisterSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError('Please enter a valid phone number!')
         return attrs
 
+    # To create a new user
+    def create(self, validated_data):
+        validated_data['is_active'] = False
+        return User.objects.create_user(**validated_data)
 
 class NgoRegisterSerializer(serializers.ModelSerializer):
     password= serializers.CharField(max_length = 16, min_length = 8, write_only=True)
