@@ -27,6 +27,7 @@ function Copyright(props) {
   );
 }
 
+
 const theme = createTheme();
 
 export default function SignUp() {
@@ -71,6 +72,7 @@ export default function SignUp() {
           >
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
+              
                 <TextField
                   autoComplete="given-name"
                   name="firstName"
@@ -80,6 +82,7 @@ export default function SignUp() {
                   label="First Name"
                   autoFocus
                 />
+                
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
