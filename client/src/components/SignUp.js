@@ -28,6 +28,7 @@ function Copyright(props) {
   );
 }
 
+
 const theme = createTheme();
 
 export default function SignUp() {
@@ -91,7 +92,6 @@ export default function SignUp() {
           .then((result) => console.log(result))
           .catch((error) => console.log('error', error))
       }
-
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -133,16 +133,6 @@ export default function SignUp() {
                         autoFocus
                       />
                     </Grid>
-                    {/* <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid> */}
                     <Grid item xs={12}>
                       <TextField
                         required
@@ -185,9 +175,9 @@ export default function SignUp() {
                   </Button>
                   <Grid container justifyContent="flex-end">
                     <Grid item>
-                      <Link href="/login" variant="body2">
+                      <Link href="/signin" variant="body2">
                         Already have an account? Sign in
-                      </Link>
+                      </Link> 
                     </Grid>
                   </Grid>
                 </Box>
