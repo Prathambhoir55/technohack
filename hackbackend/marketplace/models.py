@@ -11,7 +11,13 @@ class Product(models.Model):
     description = models.TextField(max_length=300)
     image = models.ImageField(upload_to='', null=True)
     owner = models.ForeignKey(User, on_delete= models.CASCADE)
-    #type = models.CharField(max_length=20, choices=)
+    TYPES = (
+            ('Visually Imapired', 'Visually Imapired'),
+            ('Physically impaired', 'Physically impaired'),
+            ('Hearing impaired', 'Hearing impaired'),
+            ('Other', 'Other')
+            ) 
+    type = models.CharField(max_length=20, choices= TYPES, default = 'Other')
 
 
     def __str__(self):
