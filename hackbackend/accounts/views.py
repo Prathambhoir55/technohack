@@ -1,6 +1,6 @@
 from rest_framework.generics import GenericAPIView
 from rest_framework.authtoken.models import Token
-from .serializers import UserRegisterSerializer,LoginSerializer, NgoRegisterSerializer
+from .serializers import UserRegisterSerializer,LoginSerializer,NgoRegisterSerializer
 from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse
 from .utils import Util
@@ -61,7 +61,7 @@ class LoginAPI(GenericAPIView):
 			login(request,user)
 			serializer = self.serializer_class(user)
 			token = Token.objects.get(user=user)
-			return Response({'token' : token.key,'email' : user.email},status = status.HTTP_200_OK)
+			return Response(token,status = status.HTTP_200_OK)
 		return Response('Invalid Credentials',status = status.HTTP_404_NOT_FOUND)
 
 
