@@ -1,10 +1,10 @@
 from rest_framework import serializers
 from .models import *
 
-class GroupEventSerializer(serializers.ModelSerializer):
+class LecSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = GroupEvent
+        model = LecEvent
         fields = '__all__'
         # ['name','event_type', 'date','time', 'address', 'description', 'mode', 'latitude', 'longitude', 'ngo']
 

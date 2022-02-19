@@ -11,7 +11,8 @@ class GroupEvent(models.Model):
             ) 
     name = models.CharField(max_length=50)
     event_type = models.CharField(max_length=100)
-    date_time = models.DateTimeField()
+    date = models.CharField(max_length=10)
+    time = models.CharField(max_length=10)
     address = models.CharField(max_length=200)
     description = models.TextField(max_length=300)
     mode = models.CharField(max_length=200, choices=MODE)
@@ -27,3 +28,6 @@ class Register(models.Model):
     event_name = models.ForeignKey(GroupEvent,  on_delete=models.CASCADE)
     user_name = models.ForeignKey(User,  on_delete=models.CASCADE)
     mode_chosen = models.CharField(max_length=10) #off/on
+
+    def __str__(self):
+        return self.name

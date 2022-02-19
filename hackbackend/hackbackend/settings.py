@@ -53,6 +53,9 @@ INSTALLED_APPS = [
     'drf_yasg',
     'corsheaders',
     'accounts',
+    'supportgroup',
+    'marketplace',
+    'virtuallec',
 ]
 
 MIDDLEWARE = [

@@ -4,7 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import *
 from .serializers import *
-
+from accounts.utils import Util
 
 #displays all events
 @api_view(['GET'])
@@ -18,7 +18,8 @@ def get_all_events(request):
 @api_view(['POST'])
 def create_event(request):
     data = request.data
-    serializer = GroupEventSerializer(data = data)
+    serializer = GroupEventSerializer(data = request.data)
+    print(request.data)
     if not serializer.is_valid():
         return Response({'status':403,'message': "something went wrong"})
     serializer.save()
@@ -35,15 +36,15 @@ def all_events_ngo(request):
 
 #view an event - dynamic url
 @api_view(['GET'])
-def open_event(self, request, pk):
+def open_event(request, pk):
     event_objs = GroupEvent.objects.get(id=pk)
-    serializer = GroupEventSerializer(event_objs,many=True)
+    serializer = GroupEventSerializer(event_objs)
     return Response({'status':200, 'opened event': serializer.data})
 
 
 #on register -- mode  
 @api_view(['POST'])
-def on_register(self, request, pk):
+def on_register(request, pk):
     event_name = GroupEvent.objects.get(id=pk)
     user_name = request.user
     request.data.update({'event_name': event_name, 'user_name': user_name})
@@ -51,5 +52,11 @@ def on_register(self, request, pk):
     serializer = RegisterSerializer(data = data)
     if not serializer.is_valid():
         return Response({'status':403,'message': "something went wrong"})
+    event_objs = GroupEvent.objects.get(id=pk)
+    serializer = GroupEventSerializer(event_objs)
+    Util.send_event_mail(serializer.data, request.user)    
     serializer.save()
     return Response({'status':200, 'payload': serializer.data,'message': "Data entered"})    
+
+
+
