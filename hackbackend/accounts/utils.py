@@ -14,6 +14,6 @@ def send_event_mail(data, user):
 	address = data['address']
 	mode = data['mode']
 
-	entry = {'email_body': f'This is your registration confirmation for the event {name} by {ngo} on {date}, {time} at {address}. We are heartily expecting your {mode} presence.', 'subject':f'{name}', 'to' : f'{user.email}' } 
+	entry = {'email_body': f'This is your registration confirmation for the event {name} by {ngo.name} on {date}, {time} at {address}. We are heartily expecting your {mode} presence.', 'subject':f'{name}', 'to' : f'{user.email}' } 
 
 	Util.send_email(entry)
