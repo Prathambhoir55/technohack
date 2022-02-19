@@ -7,7 +7,7 @@ import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
+
 import { Link } from 'react-router-dom'
 const drawerWidth = 240;
 
@@ -39,6 +39,7 @@ export default function sideBar() {
               height: '100%',
               content: '""',
               display: 'block',
+
               background: 'linear-gradient(252.91deg, rgba(116, 235, 213, 0.52) 0.33%, #ACB6E5 96.31%)'
               // opacity: '0.6',
             },
@@ -54,12 +55,12 @@ export default function sideBar() {
               style={{ textDecoration: 'none', color: 'black' }}
             >
               <ListItem>
-                <ListItemText className="sidetext">Home </ListItemText>
+                <p className="sidetext">Home </p>
               </ListItem>
             </Link>
             <Link to="/shop" style={{ textDecoration: 'none', color: 'black' }}>
               <ListItem>
-                <ListItemText className="sidetext">Shop</ListItemText>
+                <p className="sidetext">Shop</p>
               </ListItem>
             </Link>
             <Link
@@ -67,7 +68,7 @@ export default function sideBar() {
               style={{ textDecoration: 'none', color: 'black' }}
             >
               <ListItem>
-                <ListItemText className="sidetext">Events </ListItemText>
+                <p className="sidetext">Events </p>
               </ListItem>
             </Link>
             <Link
@@ -75,7 +76,7 @@ export default function sideBar() {
               style={{ textDecoration: 'none', color: 'black' }}
             >
               <ListItem>
-                <ListItemText className="sidetext">Learn</ListItemText>
+                <p className="sidetext">Learn</p>
               </ListItem>
             </Link>
             <Link
@@ -83,12 +84,12 @@ export default function sideBar() {
               style={{ textDecoration: 'none', color: 'black' }}
             >
               <ListItem>
-                <ListItemText className="sidetext">Tutorials </ListItemText>
+                <p className="sidetext">Tutorials </p>
               </ListItem>
             </Link>
 
             <ListItem>
-              <ListItemText className="sidetext">
+              <p className="sidetext">
                 <a
                   target="_blank"
                   href="https://handsign-m4qq6.ondigitalocean.app/"
@@ -96,7 +97,8 @@ export default function sideBar() {
                 >
                   Practice
                 </a>
-              </ListItemText>
+=======
+              </p>
             </ListItem>
           </List>
         </Drawer>

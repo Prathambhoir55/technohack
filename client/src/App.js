@@ -37,10 +37,17 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+<<<<<<< HEAD
           <Route path="/shop" element={<Shop products={products} />} />
           <Route path="/events" element={<Events />} />
           <Route path="/learn" element={<Learn />} />
           {/* <Route path="/tutorials" element={<Tutorials />} /> */}
+=======
+          {/* <Route path="/shop" element={<Shop />} /> */}
+          <Route path="/events" element={<Events />} />
+          {/* <Route path="/learn" element={<Learn />} /> */}
+          <Route path="/tutorials" element={<Tutorials />} />
+>>>>>>> 7b2000463d384d58aca34a69ec77009c54614d62
         </Routes>
       </Router>
     </div>
