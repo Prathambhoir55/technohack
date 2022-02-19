@@ -144,3 +144,14 @@ ngo :visited {
   font-size: 40px !important;
    font-weight: bold !important;
 }
+
+.glass-alt{
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  ) !important;
+  border-radius: 0.5rem !important;
+  z-index: 2;
+  backdrop-filter: blur(2rem); 
+}

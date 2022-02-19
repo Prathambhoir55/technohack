@@ -9,14 +9,28 @@ const Home = () => {
     const nav = useNavigate() 
     useEffect(() => {
         alanBtn({
-          key: 'ae81fee5be492f8cf984cc1732af719c2e956eca572e1d8b807a3e2338fdd0dc/stage',
+          key: '50a97403ba24b4b5d46f100e317501542e956eca572e1d8b807a3e2338fdd0dc/stage',
           onCommand: (commandData) => {
-              console.log(commandData);
-             if( commandData.command === 'addOrder'){
-                nav("/signin")
-             }
-          }
-        });
+            console.log(commandData)
+            if (commandData.command === 'addOrder') {
+              nav('/shop')
+            }
+
+            if (commandData.command === 'logout') {
+              nav('/')
+            }
+            
+            if (commandData.command === 'viewEvents') {
+              nav('/events')
+            }
+            if (commandData.command === 'learn') {
+              nav('/learn')
+            }
+            // if (commandData.command === 'watchTutorials') {
+            //   nav('/tutorials')
+            // }
+          },
+        })
       }, []);
      
       const productList = "wheelchair|hearing aid|crutch|eyeglass";
@@ -33,7 +47,6 @@ const Home = () => {
   
     return (
       <></>
-
   )
 }
 
