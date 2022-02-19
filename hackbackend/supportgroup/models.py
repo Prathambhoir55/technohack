@@ -28,6 +28,3 @@ class SRegister(models.Model):
     event_name = models.ForeignKey(GroupEvent,  on_delete=models.CASCADE)
     user_name = models.ForeignKey(User,  on_delete=models.CASCADE)
     mode_chosen = models.CharField(max_length=10) #off/on
-
-    def __str__(self):
-        return self.name
