@@ -31,3 +31,7 @@ We plan to enhance the features of our prototype by -
 [![image.png](https://i.postimg.cc/QtXPhhMX/image.png)](https://postimg.cc/xk4gPrH7)
 
 [![image.png](https://i.postimg.cc/XYfQJmmX/image.png)](https://postimg.cc/ZWqrs7Th)
+
+[![image.png](https://i.postimg.cc/GmmxLtFg/image.png)](https://postimg.cc/LnG1vH0j)
+
+[![image.png](https://i.postimg.cc/1t89sGXR/image.png)](https://postimg.cc/HcCGt7bF)
