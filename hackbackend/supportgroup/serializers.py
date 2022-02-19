@@ -8,8 +8,8 @@ class GroupEventSerializer(serializers.ModelSerializer):
         fields = '__all__'
         # ['name','event_type', 'date','time', 'address', 'description', 'mode', 'latitude', 'longitude', 'ngo']
 
-class RegisterSerializer(serializers.ModelSerializer):
+class SRegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Register
+        model = SRegister
         fields = ['event_name','user_name', 'mode_chosen']

@@ -23,7 +23,7 @@ class GroupEvent(models.Model):
     def __str__(self):
         return self.name
 
-class Register(models.Model):
+class SRegister(models.Model):
 
     event_name = models.ForeignKey(GroupEvent,  on_delete=models.CASCADE)
     user_name = models.ForeignKey(User,  on_delete=models.CASCADE)

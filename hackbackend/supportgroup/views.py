@@ -49,7 +49,7 @@ def on_register(request, pk):
     user_name = request.user
     request.data.update({'event_name': event_name, 'user_name': user_name})
     data = request.data
-    serializer = RegisterSerializer(data = data)
+    serializer = SRegisterSerializer(data = data)
     if not serializer.is_valid():
         return Response({'status':403,'message': "something went wrong"})
     event_objs = GroupEvent.objects.get(id=pk)
