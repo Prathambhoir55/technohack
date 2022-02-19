@@ -156,6 +156,8 @@ export default function SignIn() {
               </Box>
             </Container>
           </section>
+          <div class="circle1"></div>
+          <div class="circle2"></div>
         </main>
       </ThemeProvider>
     </>
