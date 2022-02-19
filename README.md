@@ -23,3 +23,11 @@ We plan to enhance the features of our prototype by -
 1) Inviting NGOs to contribute to our mission and aligning with our website
 2) Collaborating with more video creators and hence expanding our tutorial library
 3) Introducing renting of assistive devices on our e-marketplace.
+
+[![image.png](https://i.postimg.cc/x8s1YDkH/image.png)](https://postimg.cc/kRbmFHvX)
+
+[![image.png](https://i.postimg.cc/yYQ7Gpvg/image.png)](https://postimg.cc/bsnXDgXp)
+
+[![image.png](https://i.postimg.cc/QtXPhhMX/image.png)](https://postimg.cc/xk4gPrH7)
+
+[![image.png](https://i.postimg.cc/XYfQJmmX/image.png)](https://postimg.cc/ZWqrs7Th)
