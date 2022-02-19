@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.text{ 
+  font-family: 'Lora', serif;
+  font-size: 45px;
+  margin-top: 5em;
+  background-color: transparent;
+
+}
