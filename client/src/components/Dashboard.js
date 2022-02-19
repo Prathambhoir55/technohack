@@ -27,9 +27,6 @@ import {Link} from 'react-router-dom'
 // }));
 
 export default function RowAndColumnSpacing() {
-  const nav = useNavigate()
-  // const handleHomeClick = () => nav('/home')
-  const handlePractice = () => {}
 
   return (
     <>
@@ -53,7 +50,7 @@ export default function RowAndColumnSpacing() {
             columnSpacing={{ xs: 1, sm: 8, md: 12 }}
           >
             <Grid xs={4}>
-              <Link to={'/signin'} style={{ textDecoration: 'none' }}>
+              <Link to={'/dashboard'} style={{ textDecoration: 'none' }}>
                 <Card className="tile">
                   <HomeRoundedIcon
                     sx={{
@@ -69,8 +66,8 @@ export default function RowAndColumnSpacing() {
               </Link>
             </Grid>
             <Grid xs={4}>
-              <Link to={'/signin'} style={{ textDecoration: 'none' }}>
-                <Card className="tile" onClick={nav('/shop')}>
+              <Link to={'/shop'} style={{ textDecoration: 'none' }}>
+                <Card className="tile" >
                   <ShoppingBagIcon
                     sx={{
                       fontSize: 70,
@@ -85,8 +82,8 @@ export default function RowAndColumnSpacing() {
               </Link>
             </Grid>
             <Grid xs={4}>
-              <Link to={'/signin'} style={{ textDecoration: 'none' }}>
-                <Card className="tile" onClick={nav('/events')}>
+              <Link to={'/events '} style={{ textDecoration: 'none' }}>
+                <Card className="tile">
                   <PeopleAltRoundedIcon
                     sx={{
                       fontSize: 80,
@@ -101,8 +98,8 @@ export default function RowAndColumnSpacing() {
               </Link>
             </Grid>
             <Grid xs={4}>
-              <Link to={'/signin'} style={{ textDecoration: 'none' }}>
-                <Card className="tile" onClick={nav('/learn')}>
+              <Link to={'/learn'} style={{ textDecoration: 'none' }}>
+                <Card className="tile">
                   <SchoolRoundedIcon
                     sx={{
                       fontSize: 80,
@@ -117,8 +114,8 @@ export default function RowAndColumnSpacing() {
               </Link>
             </Grid>
             <Grid xs={4}>
-              <Link to={'/signin'} style={{ textDecoration: 'none' }}>
-                <Card className="tile" onClick={nav('/tutorials')}>
+              <Link to={'/tutorials'} style={{ textDecoration: 'none' }}>
+                <Card className="tile">
                   <OndemandVideoRoundedIcon
                     sx={{
                       fontSize: 80,
@@ -133,9 +130,7 @@ export default function RowAndColumnSpacing() {
               </Link>
             </Grid>
             <Grid xs={4}>
-              {/* <Link to={'/privacy-policy'} style={{ textDecoration: 'none' }}> */}
-
-              <Card className="tile" onClick={handlePractice}>
+              <Card className="tile" >
                 {/* <PanToolRoundedIcon sx={{fontSize: 80, display: 'flex', marginLeft:'120px', marginTop:'25px', marginBottom:'5px' }}/> */}
                 <img
                   src={ASL}
@@ -155,7 +150,6 @@ export default function RowAndColumnSpacing() {
                   Practice
                 </a>
               </Card>
-              {/* </Link> */}
             </Grid>
           </Grid>
         </Box>
