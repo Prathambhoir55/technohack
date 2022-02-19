@@ -138,3 +138,9 @@ ngo :visited {
   background-size: cover;
   background-attachment: fixed;
 }
+
+.sidetext{
+  margin : 2rem !important;
+  font-size: 40px !important;
+   font-weight: bold !important;
+}

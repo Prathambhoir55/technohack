@@ -10,7 +10,7 @@ import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import OndemandVideoRoundedIcon from '@mui/icons-material/OndemandVideoRounded';
 import PanToolRoundedIcon from '@mui/icons-material/PanToolRounded';
 import ASL from '../images/ASL.png' 
-
+import Alan from './Alan'
 
 // const Card = styled(Paper)(({ theme }) => ({
 //   // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -24,6 +24,7 @@ import ASL from '../images/ASL.png'
 export default function RowAndColumnSpacing() {
   return (
     <>
+    <Alan />
     <div className="bdy" >
     <Box sx={{ height: '200px', }}>     </Box>
     <Box sx={{ width: '75%' ,
