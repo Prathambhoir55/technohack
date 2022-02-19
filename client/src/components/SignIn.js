@@ -1,4 +1,5 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -34,79 +35,113 @@ function Copyright(props) {
 const theme = createTheme()
 
 export default function SignIn() {
+   var myHeaders = new Headers()
+   myHeaders.append('Content-Type', 'application/json')
+   myHeaders.append(
+     'Cookie',
+     'csrftoken=1KD5k9Art1xgMeni3w7mx7Dnd860c1cVMsRjfbSZpIzyKkWv5LrJxHh4Db5N2KBX; sessionid=yjufycod8wv74fmibert2hqkn5cuy61k'
+   )
+   myHeaders.append('Access-Control-Allow-Origin', 'no-cors')
+  //  myHeaders.append('Access-Control-Allow-Credentials', 'true')
+
+  const nav = useNavigate()
+
   const handleSubmit = (event) => {
     event.preventDefault()
+    // nav('/dashboard')
     const data = new FormData(event.currentTarget)
     // eslint-disable-next-line no-console
     console.log({
       email: data.get('email'),
       password: data.get('password'),
     })
+    var raw = JSON.stringify({
+    email: data.get('email'),
+    password: data.get('password'),
+  })
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow',
   }
+
+  fetch('https://bhediabackend.pythonanywhere.com/login/', requestOptions)
+    .then((response) => response.text())
+    .then((result) => {
+      console.log(result)
+      localStorage.setItem('token', result)
+      nav('/dashboard')
+    })
+    .catch((error) => console.log('error', error))
+  }
+
+  
 
   return (
     <>
-    <ThemeProvider theme={theme}>
-      <main>
-        <section class="glass">
-        <Container  sx={{ bgcolor: 'transparent' }} maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 9,
-            marginBottom: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            bgcolor: 'transparent'
-          }}
-        >
-           <Avatar sx={{ m: 1, bgcolor: '#5293E5' }}>
-           <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
+      <ThemeProvider theme={theme}>
+        <main>
+          <section class="glass">
+            <Container sx={{ bgcolor: 'transparent' }} maxWidth="xs">
+              <CssBaseline />
+              <Box
+                sx={{
+                  marginTop: 9,
+                  marginBottom: 0,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  bgcolor: 'transparent',
+                }}
+              >
+                <Avatar sx={{ m: 1, bgcolor: '#5293E5' }}>
+                  <LockOutlinedIcon />
+                </Avatar>
+                <Typography component="h1" variant="h5">
+                  Sign in
+                </Typography>
+                <Box
+                  component="form"
+                  onSubmit={handleSubmit}
+                  noValidate
+                  sx={{ mt: 1 }}
+                >
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    autoComplete="email"
+                    autoFocus
+                  />
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    autoComplete="current-password"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox value="remember" color="primary" />}
+                    label="Remember me"
+                  />
+                  <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    sx={{ mt: 3, mb: 2 }}
+                  >
+                    Sign In
+                  </Button>
+                  <Grid container>
+                    {/* <Grid item xs>
                 <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
@@ -115,16 +150,14 @@ export default function SignIn() {
                 <Link href="#" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
-              </Grid>
-            </Grid>
-          </Box>
-        </Box>
-       
-      </Container>
-      </section>  
-      </main>
+              </Grid> */}
+                  </Grid>
+                </Box>
+              </Box>
+            </Container>
+          </section>
+        </main>
       </ThemeProvider>
     </>
-    
   )
 }
