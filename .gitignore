@@ -19,3 +19,6 @@ venv.bak/
 .vscode
 .idea
 .DS_Store
+media/
+__MACOSX/
+Source code/

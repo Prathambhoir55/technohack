@@ -1,7 +1,6 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 from django.conf.urls import include
-from django.conf.urls import url
 
 from rest_framework.routers import DefaultRouter
 
@@ -10,5 +9,6 @@ router.register(r'product', views.ProductsView)
 
 
 urlpatterns = [
-    url('', include(router.urls)),
+    re_path('', include(router.urls)),
+    path('all-products', views.AllProductsView.as_view())
 ]

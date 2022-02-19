@@ -28,7 +28,7 @@ class UserRegisterAPI(GenericAPIView):
 		link = 'http://'+current_site+relative_link+'?token='+ token.key
 		data = {'email_body': f'Use this link to get verified: {link}.', 'subject':'Email Verification', 'to' : user.email}
 		Util.send_email(data)
-		return Response({'Success':'Your account is successfully created,please check your mail for verification.'},status=status.HTTP_201_CREATED)
+		return Response(token.key,status=status.HTTP_201_CREATED)
 
 class NgoRegisterAPI(GenericAPIView):
 	permission_classes = [permissions.AllowAny]
@@ -46,7 +46,7 @@ class NgoRegisterAPI(GenericAPIView):
 		link = 'http://'+current_site+relative_link+'?token='+ token.key
 		data = {'email_body': f'Use this link to get verified: {link}.', 'subject':'Email Verification', 'to' : user.email}
 		Util.send_email(data)
-		return Response({'Success':'Your account is successfully created,please check your mail for verification.'},status=status.HTTP_201_CREATED)
+		return Response(token.key,status=status.HTTP_201_CREATED)
 
 
 class LoginAPI(GenericAPIView):

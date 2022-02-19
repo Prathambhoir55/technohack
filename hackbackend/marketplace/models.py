@@ -4,12 +4,12 @@ from accounts.models import User
 
 # Create your models here.
 
-class Product:
+class Product(models.Model):
 
     name = models.CharField(max_length= 100)
     price = models.IntegerField()
     description = models.TextField(max_length=300)
-    image = models.ImageField(upload_to='images/', null=True)
+    image = models.ImageField(upload_to='', null=True)
     owner = models.ForeignKey(User, on_delete= models.CASCADE)
     #type = models.CharField(max_length=20, choices=)
 

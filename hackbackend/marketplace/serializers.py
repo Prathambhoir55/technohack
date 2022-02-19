@@ -4,6 +4,6 @@ from .models import *
 class ProductSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.email')
 
-    class meta:
+    class Meta:
         model = Product
-        fields = ['name', 'price', 'description', 'image', 'owner']
+        fields = ['id','name', 'price', 'description', 'image', 'owner']

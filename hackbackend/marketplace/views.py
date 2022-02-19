@@ -17,3 +17,14 @@ class ProductsView(viewsets.ModelViewSet):
 		
 	def perform_create(self,serializer):
 	    serializer.save(owner = self.request.user)
+
+class AllProductsView(APIView):
+
+	def get(self,request):
+		products = Product.objects.all()
+		serializer = ProductSerializer(products, many = True)
+		return Response(serializer.data, status= status.HTTP_200_OK)
+
+# class PaymentView(APIView):
+
+# 	def get()
