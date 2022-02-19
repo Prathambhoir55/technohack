@@ -165,7 +165,6 @@ const Events = () => {
    
     </>
   );
->>>>>>> 7b2000463d384d58aca34a69ec77009c54614d62
 }
 
 export default Events
