@@ -1,7 +1,7 @@
 import {useRef, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import alanBtn from "@alan-ai/alan-sdk-web";
-
+import Alan from './Alan';
 
 
 const Home = () => {
@@ -33,6 +33,7 @@ const Home = () => {
   
     return (
       <></>
+
   )
 }
 

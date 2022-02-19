@@ -5,25 +5,19 @@ import { Route, Routes } from "react-router";
 import SignIn from './components/SignIn'
 import Landing from './components/landing/Landing'
 import Dashboard from './components/Dashboard'
-
+import SideBar from './components/sideBar'
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          {/* <Route
-                path="/privacy-policy"
-                component={() => {
-                  window.location.href = 'https://google.com'
-                  return null
-                }}
-              /> */}
-        </Routes>
-      </Router>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Landing/>}/>
+        <Route path='/events' element={<SideBar/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/signin' element={<SignIn/>}/>
+        <Route path='/signup' element={<SignUp/>}/>
+      </Routes>
+    </Router>
     </div>
   )
 }
