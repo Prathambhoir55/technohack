@@ -24,6 +24,8 @@ We plan to enhance the features of our prototype by -
 2) Collaborating with more video creators and hence expanding our tutorial library
 3) Introducing renting of assistive devices on our e-marketplace.
 
+[![image.png](https://i.postimg.cc/MKMwPr0n/image.png)](https://postimg.cc/2VDg3GKY)
+
 [![image.png](https://i.postimg.cc/x8s1YDkH/image.png)](https://postimg.cc/kRbmFHvX)
 
 [![image.png](https://i.postimg.cc/yYQ7Gpvg/image.png)](https://postimg.cc/bsnXDgXp)
