@@ -27,9 +27,9 @@ main {
 }
 
 .glass {
-  background: white;
   min-height: 75vh;
   width: 40%;
+  background: white;
   background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.7),
@@ -97,4 +97,32 @@ main {
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.tile{ 
+  
+  font-size: 42px ;
+  height: 200px ;
+  text-align: center ;
+  margin: 2rem;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  ) !important;
+  border-radius: 1rem !important;
+  z-index: 2 !important;
+  backdrop-filter: blur(2rem) ;
+}
+
+.bdy{ 
+
+  background: linear-gradient(252.91deg, rgba(116, 235, 213, 0.52) 0.33%, #ACB6E5 96.31%);;
+  height: 100vh;
+  
+  /* margin-top: -230px; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }

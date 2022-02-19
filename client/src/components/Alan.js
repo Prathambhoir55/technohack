@@ -2,11 +2,6 @@ import {useRef, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import alanBtn from "@alan-ai/alan-sdk-web";
 
-const COMMANDS = {
-    GO_TO_SIGNUP: 'go-to-signup',
-    GO_TO_SIGNIN: 'go-to-signin'
-}
-
 
 
 const Home = () => {
