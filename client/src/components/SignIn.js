@@ -67,12 +67,12 @@ export default function SignIn() {
     redirect: 'follow',
   }
 
-  fetch('https://urmidedhia.pythonanywhere.com/login/', requestOptions)
+  fetch('https://bhediabackend.pythonanywhere.com/login/', requestOptions)
     .then((response) => response.text())
     .then((result) => {
       console.log(result)
-      // localStorage.setItem('token', result.data.token)
-      // nav('/dashboard')
+      localStorage.setItem('token', result)
+      nav('/dashboard')
     })
     .catch((error) => console.log('error', error))
   }
