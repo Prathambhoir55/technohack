@@ -9,6 +9,9 @@ import { useNavigate, Link } from 'react-router-dom'
 
 const Landing = () => {
   const nav = useNavigate()
+  const handleClickSignIn = () => nav('/signin')
+  const handleClickSignUp = () => nav('/signup')
+
   return (
     <>
       <div className="img">
@@ -39,6 +42,7 @@ const Landing = () => {
               color: '#000',
               borderColor: '#000',
             }}
+            onClick={handleClickSignUp}
           >
             Sign Up
           </Button>
@@ -53,6 +57,7 @@ const Landing = () => {
               borderRadius: '10px',
               backgroundColor: '#000',
             }}
+            onClick={handleClickSignIn}
           >
             Sign In
           </Button>
@@ -63,11 +68,14 @@ const Landing = () => {
             marginLeft: '90px',
             marginTop: '500px',
             color: '#000 !important',
-            position: 'fixed'
+            position: 'fixed',
           }}
         >
-          Are you an NGO looking to partner with us? Sign in                   
-          <Link to="/signin" id="ngo" > here.</Link>
+          Are you an NGO looking to partner with us? Sign in
+          <Link to="/signin" id="ngo">
+            {' '}
+            here.
+          </Link>
         </div>
       </div>
     </>
